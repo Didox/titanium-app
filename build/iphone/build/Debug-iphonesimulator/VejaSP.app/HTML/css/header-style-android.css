@@ -1,0 +1,20 @@
+body{padding-top:0;}
+/*header{position:relative;}*/
+#bsc_container .home{top:62px!important;}
+#bsc_info {min-height: 85px!important;}
+#bsc_info .resultsExib{margin-top:45px!important;}
+#bsc_info.bscNoResult{min-height: 88px;}
+
+#header-filtro .fechar{
+	top: -12px! important;
+	left: -12px! important;
+	position: relative !important;
+}
+
+#header-filtro .logo{
+	top: -44px !important;
+	position: relative !important;
+}
+
+#cinema {position:relative; top: 20px;}
+#listaSalas {position:relative;top: 20px;}

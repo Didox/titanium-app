@@ -1,0 +1,52 @@
+#restorando{position: absolute;top: 0;left: 0;padding: 10px; background-color: #FFF; box-sizing:border-box;-webkit-box-sizing:border-box}
+
+#restorando .header {position: fixed;top: 0;left: 0;z-index: 10;float: left;padding: 10px;width: 100%;height: 45px;background: #db2027;-webkit-backface-visibility: hidden;box-sizing: border-box;-webkit-box-sizing: border-box;}
+#restorando .header .logo{display: block;margin: auto;font: bold 16px/25px 'Ubuntu';color: #fff;text-align: center;text-transform: uppercase;}
+#restorando .header .fechar{position: fixed;top: 0;left: 0;z-index: 12;display: block;width: 45px;height: 45px;font: 30px/45px 'Ubuntu';color: #fff;text-align: center;text-transform: uppercase}
+
+#restorando h1{font: normal 14px 'Ubuntu'; color: #999; margin-bottom: 20px;}
+#restorando #wating h1, #restorando #error h1, #restorando #confirmation h1{font-size: 14px; color: #666; margin-bottom: 0px}
+
+#restorando h2{color: #666; font-weight: normal;}
+#restorando h2>span{font-weight: bold;}
+#restorando #wating h2, #restorando #error h2, #restorando #confirmation h2{font-size: 20px; color: #000; margin-top: 10px; border-bottom: 1px solid #CCC; padding: 0 10px 20px;}
+#restorando #personal h2 {margin: -5px 0}
+
+#restorando #choice, #restorando #personal{background: url('../images/restorando.png') right 50px no-repeat; padding: 60px 0;}
+#restorando #wating, #restorando #error, #restorando #confirmation {background: url('../images/restorando.png') center 0 no-repeat; padding: 50px 0; margin-top: 50px;}
+#restorando #wating, #restorando #error, #restorando #confirmation h1{text-align: center;}
+
+#restorando #selectors{background:#fff;box-sizing:border-box;-webkit-box-sizing:border-box}
+#restorando #selectors>div{margin-bottom: 5px;}
+#restorando #selectors>div>ul{height:auto}
+#restorando #selectors>div>ul>li>a{position:relative;display:block;margin-bottom:2px;padding:10px;font:normal 14px 'Ubuntu';color:#ccc;text-transform:uppercase;background:#f3f3f3}
+#restorando #selectors>div>ul>li>a.selected{color:#000;background:#0099cc; font-weight: bold;}
+#restorando #selectors>div>ul>li>a.selected:after{position:absolute;top:50%;right:5px;margin-top:-10px;border:2px solid #000;width:16px;height:16px;font:14px 'Ubuntu';color:#000;text-align:center;border-radius:16px;content:'×';opacity:0.5}
+#restorando #selectors>div>ul>li>a.close{display:none}
+#restorando #selectors>div>p.title>a{position:relative;display:block;margin-bottom:2px;padding:10px;font:normal 14px/20px 'Ubuntu';color:#3b3b3b;text-transform:uppercase;background:#f3f3f3}
+#restorando #selectors>div>p.title>a:after{position:absolute;top:10px;right:10px;font:22px/20px 'Ubuntu';color:#999;content:'›';transition:.1s ease-out;-webkit-transition:.1s ease-out}
+#restorando #selectors>div>p.title>a span{color:#000}
+#restorando #selectors>div>p.title.ativado>a{margin-bottom:0;color:#3b3b3b;font-weight: bold;}
+#restorando #selectors>div>p.title.ativado>a:after{color:#3b3b3b;transform:rotate(90deg);-webkit-transform:rotate(90deg)}
+#restorando #selectors>div>p.title+ul{overflow:auto;margin:auto;padding:0 10px;width:98%;max-height:145px;background:#e4e4e4;box-sizing:border-box;-webkit-box-sizing:border-box}
+#restorando #selectors>div>p.title+ul>li>a{margin-bottom:0;border-bottom:1px solid #fff;color:#3b3b3b;text-transform:none;background:none}
+#restorando #selectors>div>p.title+ul>li:last-child>a{border-bottom:0}
+#restorando #selectors>div>p.title+ul>li>a.selected{color:#000; border-bottom: 0px}
+#restorando #selectors>div>p.title+ul>li>a.selected:after{position:absolute;top:50%;right:5px;margin-top:-10px;border:2px solid #000;width:16px;height:16px;font:14px 'Ubuntu';color:#000;text-align:center;border-radius:16px;content:'×';opacity:1}
+
+#restorando .buttons-holder{text-align: center;}
+#restorando button{display: inline-block;padding: 10px;width: 130px;font: bold 14px/20px 'Ubuntu';color: #fff;text-align: center;text-transform: uppercase;background: #0099cc;border-radius: 4px;margin: 15px auto 0; border: 1px solid #0099cc;}
+#restorando button.secundary{color: #0099cc; background-color: #fff; border: 1px solid #0099cc;}
+#restorando button:disabled{opacity: 0.3}
+#restorando button:last-child{margin-left: 10px;}
+
+#restorando input, #restorando textarea{width: 100%; height: 40px; border: 1px solid #ccc; margin-top: 20px; border-radius: 4px; font: normal 16px 'Ubuntu'; box-sizing: border-box; padding-left: 5px; box-shadow: none;}
+#restorando textarea{height: 50px;}
+
+#restorando #confirmation ul{margin: 20px 0;}
+#restorando #confirmation li{margin-bottom: 8px;}
+#restorando #confirmation li>span{font: bold 12px 'Ubuntu'; color: #999; text-transform: uppercase;}
+#restorando #confirmation li>strong{padding-left: 5px; font:normal 14px 'Ubuntu'; color: #000; text-transform: capitalize;}
+#restorando #confirmation li.spacer{height: 20px;}
+
+

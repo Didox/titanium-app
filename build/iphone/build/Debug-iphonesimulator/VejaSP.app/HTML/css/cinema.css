@@ -1,0 +1,90 @@
+body{padding: 25px 0 50px!important;}
+#cinema{overflow:hidden;margin:auto;width:320px;box-sizing:border-box;-webkit-box-sizing:border-box}
+#cinema .cineHeader{position:relative;}
+#cinema .home{position:absolute;top:-6px;right:0;width:40px;height:40px;display:block}
+#cinema .home .icon-home{display:block;font-size:30px;color:white;}
+#cinema *{box-sizing:border-box;-webkit-box-sizing:border-box}
+#cinema .cards{float:left;padding:0px 10px 4px;width:100%}
+#cinema .cards>.titulo{margin-top:10px; margin-bottom:10px;font:12px 'Ubuntu';text-transform:uppercase;}
+#cinema .cards.estreias{background:#333}
+#cinema .cards.estreias>.titulo{display:none;color:#fff}
+#cinema .cards.emCartaz{background:#f6f6f6;border-radius:4px}
+#cinema .cards.emCartaz>.titulo{color:#333}
+#cinema .cards ul{float:left;width:100%}
+#cinema .cards ul li{position:relative;float:left;margin:0 6px 6px 0;width:96px;text-align:center;background:#000;border-radius:2px}
+#cinema .cards ul li:nth-child(3n+3){margin:0 0 6px}
+#cinema .cards ul li .categoria{float:left;padding:5px;width:100%;font:10px 'Ubuntu';color:#333;text-transform:uppercase;background:#f9df00}
+#cinema .cards.emCartaz ul li .categoria{display:none}
+#cinema .cards ul li .titulo{overflow:hidden;float:left;margin-bottom:5px;padding:5px 5px 0;width:100%;height:28px;font:bold 10px 'Ubuntu';color:#fff;background:#000;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+#cinema .cards ul li .imagem{background: url('../images/cinema-sem-foto.jpg')center center no-repeat;float:left;width:100%;height:140px}
+#cinema .cards ul li .imagem img{float:left;width:100%;height:auto;min-height:146px;font-size:0;}
+#cinema .cards ul li .avaliacoes{position:absolute;bottom:33px;left:0;float:left;width:100%;background:-webkit-linear-gradient(top,rgba(0,0,0,0)0,rgba(0,0,0,1)100%)}
+#cinema .cards ul li .avaliacoes .avaliacao .estrelas{display:block;font:16px 'category-icons'}
+#cinema .cards ul li .avaliacoes .avaliacao .avaliadoPor{display:none}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas:after{color:#777}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas:before{color:#db2027}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-none:after{content:'\e61b\e61b\e61b\e61b\e61b'}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-none:before{content:''}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-1:after{;content:'\e61b\e61b\e61b\e61b'}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-1:before{content:'\e61b'}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-2:after{content:'\e61b\e61b\e61b'}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-2:before{content:'\e61b\e61b'}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-3:after{content:'\e61b\e61b'}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-3:before{content:'\e61b\e61b\e61b'}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-4:after{content:'\e61b'}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-4:before{content:'\e61b\e61b\e61b\e61b'}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-5:after{content:''}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-5:before{content:'\e61b\e61b\e61b\e61b\e61b'}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-bomba:after{color:#db2027!important;content:'\e619'}
+#cinema .cards ul li .avaliacoes .avaliacao.vejaSp .estrelas.estrela-bomba:before{content:''}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas:after{color:#777}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas:before{color:#fdaf0e}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-none:after{content:'\e61a\e61a\e61a\e61a\e61a'}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-none:before{content:''}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-1:after{;content:'\e61a\e61a\e61a\e61a'}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-1:before{content:'\e61a'}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-2:after{content:'\e61a\e61a\e61a'}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-2:before{content:'\e61a\e61a'}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-3:after{content:'\e61a\e61a'}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-3:before{content:'\e61a\e61a\e61a'}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-4:after{content:'\e61a'}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-4:before{content:'\e61a\e61a\e61a\e61a'}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-5:after{content:''}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-5:before{content:'\e61a\e61a\e61a\e61a\e61a'}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-bomba:after{color:#db2027!important;content:'\e619'}
+#cinema .cards ul li .avaliacoes .avaliacao.usuario .estrelas.estrela-bomba:before{content:''}
+#cinema .cards ul.lista li{margin:0 0 6px;padding:9px;border:1px solid rgba(0,0,0,0.25);width:100%;text-align:left}
+#cinema .cards ul.lista li .categoria,
+#cinema .cards ul.lista li .imagem{display:none}
+#cinema .cards ul.lista li .titulo{padding:0;height:auto;font-size:12px;background:none;-webkit-line-clamp:1}
+#cinema .cards ul.lista li .avaliacoes{position:static;background:none}
+#cinema .cards ul.lista li .avaliacoes .avaliacao .estrelas{float:left;margin-right:5px}
+#cinema .cards ul.lista li .avaliacoes .avaliacao .avaliadoPor{float:left;display:inline;margin-top:4px;font:8px 'Ubuntu';color:#999;text-transform:uppercase}
+#cinema .cards ul.lista li .avaliacoes .avaliacao.vejaSp{float:left;margin-right:10px;padding-right:10px;border-right:1px solid rgba(255,255,255,0.25)}
+#cinema .cards.emCartaz ul.lista li{background:none}
+#cinema .cards.emCartaz ul.lista li .titulo{color:#000}
+#cinema .cards.emCartaz ul.lista li .avaliacoes .avaliacao.vejaSp{border-right:1px solid rgba(0,0,0,0.25)}
+#cinema .cards.emCartaz ul.lista li .avaliacoes .avaliacao.vejaSp .estrelas:after,
+#cinema .cards.emCartaz ul.lista li .avaliacoes .avaliacao.usuario .estrelas:after{color:#ccc}
+#cinema p.carregando{clear:both;float:none;border:1px solid rgba(0,0,0,0.25);width:40px;height:40px;background-color:#fff;opacity:0.75;border-radius:40px}
+.texto {
+position: relative;
+z-index: 1;
+width: 93px;
+display: block;
+float: left;
+text-align: center;
+font: 12px 'Ubuntu';
+font-weight: bold;
+text-transform: uppercase;
+color: #999999;
+line-height: 30px;
+}
+
+.texto.selecionado {
+	color: #333333;
+}
+.icon-filtro{
+	display: none;
+}
+#bsc_navigators>div>ul:first-child>li:first-child>a.selected:after{display:none}

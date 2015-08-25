@@ -1,0 +1,57 @@
+.abril-comentarios-form{display: none;}
+.abril-comentarios-avatar{display: block; float: left; overflow: hidden; width: 40px; height: 40px; border-radius: 10px; margin-right: 10px; background: transparent;}
+.abril-comentarios-avatar.user-no-photo{ background: url(../images/avatar.jpg) no-repeat center center; }
+.abril-comentarios-avatar img{width: 100%; background: transparent;}
+.abril-comentarios-widget ol li{padding: 10px 0; border-bottom: 1px solid #ccc;}
+.abril-comentarios-widget ol li > div{overflow: hidden; line-height: 1;}
+.abril-comentarios-widget ol li div > strong, .abril-comentarios-autor{display: block; font-size: 16px; color: #09c; font-weight: bold;}
+.abril-comentarios-widget ol li div > abbr, .abril-comentarios-periodo{color: #999; font-size: 11px; font-weight: bold; margin: 5px 0 0; display: block;}
+.abril-comentarios-widget ol li > p, .abril-comentarios-resposta{clear: both; margin: 5px 0 0; font-size: 13px; line-height: 16px; color: #333;}
+.abril-comentarios-ver-mais{display: none;}
+.abril-comentarios-loading{width: 100%; height: 60px; background: url(../images/spinner.gif) center center no-repeat; display: none;}
+
+
+
+.abril-comentarios-widget .respostas{
+	margin-top: 5px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding: 10px 10px 10px 20px;
+	position: relative;
+}
+.abril-comentarios-widget .respostas ol{
+	overflow: hidden;
+	height: 0;
+	opacity: 0;
+	transition: 0.3s;
+}
+.abril-comentarios-widget .respostas.respostas-open ol{
+	height: auto;
+	opacity: 1;
+}
+.abril-comentarios-widget .respostas:before{
+	content: '';
+	width: 0;
+	height: 0;
+	display: block;
+	border: 5px solid transparent;
+	border-left-color: #09c;
+	position: absolute;
+	left: 12px;
+	top: 12px;
+	-webkit-transform-origin: 25% 50%;
+	transform-origin: 25% 50%;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+.abril-comentarios-widget .respostas.respostas-open:before{
+  -webkit-transform:rotate(90deg);
+  transform:rotate(90deg);
+}
+.abril-comentarios-respostas-btn{
+	content: "Respostas (" attr(data-totalrespostas) ")";
+	display: block;
+	color: #333;
+	font-weight: bold;
+}
+.abril-comentarios-widget .respostas ol li:last-child{border-bottom: none;}

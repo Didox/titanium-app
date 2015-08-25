@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width,user-scalable=no">
+  <link rel="stylesheet" href="HTML/css/global.css">
+  <link rel="stylesheet" href="HTML/css/cinema.css">
+  <link rel="stylesheet" href="HTML/css/category-icons.css">
+  <link rel="stylesheet" href="HTML/css/busca.css">
+  <title>VejaSP Cinema</title>
+</head>
+<body class="home">
+  <header>
+    <div id="header-filtro">
+      <a href="javascript:VEJASP.Filtros.hideFiltros();" class="fechar">×</a>
+      <span class="logo">Filtros</span>
+    </div>
+    <div id="header">
+      <a href="javascript:app.backToHome();" class="logo" onclick="app.eventAnalytics('Topo','clique','Cinema',0)">Cinema</a>
+      <a href="javascript:app.backWindow();" class="back" onclick="app.eventAnalytics('Topo','clique','bt-voltar',0)">Voltar</a>
+      <a href="javascript:;" class="icon find" onclick="app.eventAnalytics('Topo','clique','icone-lupa',0)"><span class="icon-lupa"></span></a>
+      <a href="javascript:VEJASP.Filtros.showFiltros();" class="icon filter" onclick="app.eventAnalytics('Busca','clique','icone-filtros',0);"><span class="icon-filtro"></span></a>
+      <form action="busca.html" class="bscForm">
+        <button type="reset" onclick="app.eventAnalytics('Topo','clique','cancelar-busca',0)">Cancelar</button>
+        <button type="submit">Buscar</button>
+        <input type="search" name="qu" class="qu" autocomplete="off" placeholder="Pesquisar">
+      </form>
+      <div class="bsc_history">
+        <p class="bsc_history_label">Buscas recentes <a href="javascript:;" class="bsc_history_close" onclick="app.eventAnalytics('Topo','clique','icone-x-historico',0)"></a></p>
+      </div>
+    </div>
+  </header>
+  <div id="cinema">
+    <div class="cineHeader">
+      <a class="alternar" href="javascript:app.toogleCinema();">
+        <input type="checkbox" id='toggle'>
+        <span class="indicador"></span>
+        <span class="texto selecionado" id="filmes-btn" onclick="app.eventAnalytics('Cinema','clique','bt-grid',0)">Filmes</span>
+        <span class="texto" id="salas-btn" onclick="app.eventAnalytics('Cinema','clique','bt-lista',0)">Salas</span>
+      </a>
+      <a href="javascript:app.backToHome()" class="home" onclick="app.eventAnalytics('cinema','clique','icone-casa',0);"><span class="icon-home icon-casinha"></span></a>
+    </div>
+  </div>
+  <!-- html search structure -->
+  <div id="listaSalas" style="display: none">
+  <script id="search-results-template" type="text/mustache">
+    <div class="{{type_class}}" data-url="javascript:app.openInternalLink('{{url}}');">
+      <div class="dados">
+        {{#isRatedVejasp}}
+        <a href="javascript:void(0);" class="avaliado-vejasp" onclick="app.fixAndroidCaractere();app.eventAnalytics('Busca','clique','selo-avaliado-card',0);">AVALIADO POR VEJA SP</a>
+        {{/isRatedVejasp}}
+        {{#category}}
+        <span class="categoria"><a href="javascript:void(0);" onclick="app.fixAndroidCaractere();app.eventAnalytics('Busca','clique','categoria-card',0);">{{category}} {{#sub_category}}&rsaquo; {{sub_category}}{{/sub_category}}</a></span>
+        {{/category}}
+        <h4><a href="javascript:void(0);" onclick="app.fixAndroidCaractere();app.eventAnalytics('Busca','clique','titulo-card',0);">{{nome}}</a></h4>
+        {{#isEstabelecimento}}
+        <p class="descricao">
+          <a href="javascript:void(0);" onclick="app.fixAndroidCaractere();app.eventAnalytics('Busca','clique','descricao-card',0);">
+            {{address}} - {{#main_neighborhood}}{{main_neighborhood}}{{/main_neighborhood}} /
+            {{city}} - SP
+          </a>
+        </p>
+        {{#geo_distance}}<p class="descricao"><strong class='distancia'>A {{geo_distance}} metros de você</strong></p>{{/geo_distance}}
+        {{/isEstabelecimento}}
+        {{#isAtracao}}
+        <p class="descricao">
+          {{#resenha}}
+          <p class="descricao"> {{resenha}} </p>
+          {{/resenha}}
+        </p>
+        {{/isAtracao}}
+        {{#showAvaliacao}}
+        <p class="ratings">
+          {{#editorial_rating}}
+          <span class="rating rating-vejasp rating-small{{#avaliacaoBomba}} rating-sep{{/avaliacaoBomba}}{{#userRatingCss}} rating-sep{{/userRatingCss}}">
+            <span class="icon-bola-estrela rating-stars stars-{{editorial_rating}}"></span>
+            <span class="tagvejasp">VEJASP</span>
+          </span>
+          {{/editorial_rating}}
+          {{#avaliacaoBomba}}
+          <span class="rating rating-small">
+            <span class="icon-bomba rating-stars stars-0"></span>
+            {{#numero_avaliacoes}}
+            <span class="total-votes">({{numero_avaliacoes_texto}})</span>
+            {{/numero_avaliacoes}}
+          </span>
+          {{/avaliacaoBomba}}
+          {{#userRatingCss}}
+          <span class="rating rating-small">
+            <span class="icon-estrela rating-stars stars-{{user_rating}}"></span>
+            {{#numero_avaliacoes}}
+            <span class="total-votes">({{numero_avaliacoes_texto}})</span>
+            {{/numero_avaliacoes}}
+          </span>
+          {{/userRatingCss}}
+        </p>
+        {{/showAvaliacao}}
+      </div>
+    </div>
+  </script>
+  <!-- // html search structure -->
+  <div id="bsc_container">
+    <div id="bsc_lat">
+      <div id="bsc_ddm"></div>
+      <p class="carregando">Carregando</p>
+      <div id="bsc_resultado"></div>
+    </div>
+    <div id="bsc_navigators"></div>
+  </div>
+  </div>
+  <script src="HTML/js/zepto.js"></script>
+  <script src="HTML/js/mustache.js"></script>
+  <script src="HTML/js/api.js"></script>
+  <script src="HTML/js/search_result.js"></script>
+  <script src="http://busca.abril.com.br/libc/busca/js/v3/BSC.js"></script>
+  <script src="HTML/js/index.js"></script>
+  <script src="HTML/js/cinema_busca.js"></script>
+  <script>app.pageviewAnalytics("busca","Busca");</script>
+  <footer></footer>
+  <script src="HTML/js/zepto.js"></script>
+  <script src="HTML/js/cinema.js"></script>
+  <script src="HTML/js/fastclick.js"></script>
+  <script>app.pageviewAnalytics("cinema","Cinema");app.renderPublicidade("leaderboard1","cinema");</script>
+  <script>try {FlurryAgent.startSession('HQ85Q3FWJT72P476FRPK');} catch (e) { }</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <!--<property name="acs-oauth-secret-production" type="string">GqiQcc2KmttR35VNeG8qaOOwnU01mHDQ</property><property name="acs-oauth-key-production" type="string">O5wu0O3iaIFpglUK6vkAF52anrJ8U1AH</property><property name="acs-api-key-production" type="string">KVKrK1DPgjd7YTnafHGFOCQ2TAx9fGlM</property><property name="acs-oauth-secret-development" type="string">EklDsNs7KwS9YDx7oM4lglcyqG4NcY6O</property><property name="acs-oauth-key-development" type="string">ijoVZ3yTdY8AtUXfBq93oi7iiFQudkQp</property><property name="acs-api-key-development" type="string">8Who84lgXn1HQzfDHez3ZaD2eE9QCtAG</property><property name="acs-push-type-development" type="string">gcm</property><property name="acs-push-type-production" type="string">gcm</property><property name="acs-push-type" type="string">gcm</property>-->
+    <property name="acs-oauth-secret-production" type="string">x445AmUkh60OQUT2BcsXVexiNDbbf50Z</property>
+    <property name="acs-oauth-key-production" type="string">ZEsOC6vbU03ie3TgNycFRoQVJRuemNvI</property>
+    <property name="acs-api-key-production" type="string">jiKkVVMV3REcM7Ow1LyPLuKMz5O9urP6</property>
+    <property name="acs-oauth-secret-development" type="string">y2R9BEGSiUfZ9Yp8notlf243T25CbShm</property>
+    <property name="acs-oauth-key-development" type="string">ROkqf7clcBHnxZjbKWpK5SMmnE3C6eQF</property>
+    <property name="acs-api-key-development" type="string">a1A1rep4GT2fttCksgkrKQuZ8BpRGBQD</property>
+    <property name="acs-push-type-development" type="string">gcm</property>
+    <property name="acs-push-type-production" type="string">gcm</property>
+    <property name="acs-push-type" type="string">gcm</property>
+    <id>com.abril.vejasp</id>
+    <name>VejaSP</name>
+    <version>12</version>
+    <publisher>VejaSP</publisher>
+    <url>http://vejasp.abril.com.br</url>
+    <description>not specified</description>
+    <copyright>2014 by equipe VejaSP</copyright>
+    <icon>vejasp.png</icon>
+    <persistent-wifi>false</persistent-wifi>
+    <prerendered-icon>false</prerendered-icon>
+    <statusbar-style>default</statusbar-style>
+    <statusbar-hidden>true</statusbar-hidden>
+    <fullscreen>true</fullscreen>
+    <navbar-hidden>true</navbar-hidden>
+    <analytics>true</analytics>
+    <guid>2b95d1fa-a431-472b-9000-d4f1c58061c2</guid>
+    <property name="ti.ui.defaultunit" type="string">system</property>
+    <iphone>
+        <orientations device="iphone">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+        </orientations>
+        <orientations device="ipad">
+            <orientation>Ti.UI.PORTRAIT</orientation>
+        </orientations>
+    </iphone>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest android:installLocation="preferExternal"/>
+        <manifest android:versionCode="21" android:versionName="5.0" package="com.abril.vejasp">
+            <activity android:configChanges="keyboardHidden|orientation"
+                android:label="instafire"
+                android:name=".InstafireActivity"
+                android:screenOrientation="portrait" android:theme="@style/Theme.Titanium">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN"/>
+                    <category android:name="android.intent.category.LAUNCHER"/>
+                </intent-filter>
+            </activity>
+            <activity android:configChanges="keyboardHidden|orientation"
+                android:name="ti.modules.titanium.facebook.FBActivity"
+                android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+            <activity android:configChanges="keyboardHidden|orientation"
+                android:name="org.appcelerator.titanium.TiActivity" android:screenOrientation="portrait"/>
+            <activity android:configChanges="keyboardHidden|orientation"
+                android:name="org.appcelerator.titanium.TiTranslucentActivity"
+                android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent"/>
+            <activity android:configChanges="keyboardHidden|orientation"
+                android:name="org.appcelerator.titanium.TiModalActivity"
+                android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent"/>
+            <activity android:configChanges="keyboardHidden|orientation"
+                android:name="ti.modules.titanium.ui.TiTabActivity" android:screenOrientation="portrait"/>
+            <activity android:configChanges="keyboardHidden|orientation"
+                android:name="ti.modules.titanium.ui.android.TiPreferencesActivity" android:screenOrientation="portrait"/>
+            <service android:exported="false" android:name="org.appcelerator.titanium.analytics.TiAnalyticsService"/>
+            <uses-sdk android:maxSdkVersion="21"
+                android:minSdkVersion="16" android:targetSdkVersion="21"/>
+        </manifest>
+    </android>
+    <ios>
+        <plist>
+            <dict>
+                <key>NSLocationAlwaysUsageDescription</key>
+                <string>
+                    Specify the reason for accessing the user's location information.
+                    This appears in the alert dialog when asking the user for permission to
+                    access their location.
+                </string>
+            </dict>
+        </plist>
+    </ios>
+    <mobileweb>
+        <precache/>
+        <splash>
+            <enabled>false</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+    <modules>
+        <module platform="commonjs">ti.cloud</module>
+        <module platform="android" version="3.2.1">ti.cloudpush</module>
+        <!--         <module platform="iphone">ti.flurry</module><module platform="android">ti.flurry</module> -->
+    </modules>
+    <deployment-targets>
+        <target device="android">true</target>
+        <target device="blackberry">false</target>
+        <target device="ipad">true</target>
+        <target device="iphone">true</target>
+        <target device="mobileweb">false</target>
+        <target device="tizen">false</target>
+    </deployment-targets>
+    <sdk-version>4.1.0.GA</sdk-version>
+    <property name="ti.deploytype">test</property>
+    <property name="ti.android.useLegacyWindow" type="bool">true</property>
+    <property name="appc-app-id" type="string">55dbe3e3fd3331b73a2f97fa</property>
+</ti:app>

@@ -1,0 +1,89 @@
+body {
+    background: #eee;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.swift{
+	position: relative;
+	overflow: hidden;
+}
+.swift-inner{
+	position: relative;
+	display: block;
+	left: 50%; 
+}
+.swift ul{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	list-style: none;
+	letter-spacing: 0;
+}
+.swift li{
+	float: left;
+	display: inline-block;
+	text-align: center;
+	-webkit-transition: 0.3s ease-in;
+	   -moz-transition: 0.3s ease-in;
+	    -ms-transition: 0.3s ease-in;
+	     -o-transition: 0.3s ease-in;
+	        transition: 0.3s ease-in;
+	-webkit-transform-origin: center center;
+	   -moz-transform-origin: center center;
+	    -ms-transform-origin: center center;
+	     -o-transform-origin: center center;
+	        transform-origin: center center;
+ -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+     -ms-transform: scale(0.6);
+      -o-transform: scale(0.6);
+         transform: scale(0.6);
+}
+.swift .active{
+	-webkit-transform: scale(1);
+	   -moz-transform: scale(1);
+	    -ms-transform: scale(1);
+	     -o-transform: scale(1);
+	        transform: scale(1);
+}
+.swift li a{
+	width: 100%;
+	display: block;
+}
+.swift li a img{
+	width: 100%;
+}
+
+.swift-bullets-container, .swift-buttons-container{
+	margin: 0 auto;
+	position: relative;
+	text-align: center;
+}
+
+.swift-bullet{
+	display: inline-block;
+  width: 0;
+  height: 0;
+  border: 10px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+	-webkit-transition: 0.3s ease-in;
+	   -moz-transition: 0.3s ease-in;
+	    -ms-transition: 0.3s ease-in;
+	     -o-transition: 0.3s ease-in;
+	        transition: 0.3s ease-in;
+	-webkit-transform-origin: center center;
+	   -moz-transform-origin: center center;
+	    -ms-transform-origin: center center;
+	     -o-transform-origin: center center;
+	        transform-origin: center center;
+ -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+     -ms-transform: scale(0.6);
+      -o-transform: scale(0.6);
+         transform: scale(0.6);
+}

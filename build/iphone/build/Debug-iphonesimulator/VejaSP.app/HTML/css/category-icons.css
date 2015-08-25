@@ -1,0 +1,158 @@
+@font-face {
+	font-family: 'category-icons';
+	src:url('fonts/category-icons.eot');
+	src:url('fonts/category-icons.eot?#iefix') format('embedded-opentype'),
+		url('fonts/category-icons.woff') format('woff'),
+		url('fonts/category-icons.ttf') format('truetype'),
+		url('fonts/category-icons.svg#category-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'category-icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class^="icon-"]:before, [class*=" icon-"]:before{ position: relative; }
+
+.icon-copa:before {
+	content: "\e620";
+}
+.icon-teatro:before {
+	content: "\e601";
+}
+.icon-shows:before {
+	content: "\e602";
+}
+.icon-restaurantes:before {
+	content: "\e603";
+}
+.icon-passeios:before {
+	content: "\e604";
+}
+.icon-noite:before {
+	content: "\e605";
+}
+.icon-lojas:before {
+	content: "\e606";
+}
+.icon-liquidacoes:before {
+	content: "\e607";
+}
+.icon-exposicoes:before {
+	content: "\e608";
+}
+.icon-danca:before {
+	content: "\e609";
+}
+.icon-criancas:before {
+	content: "\e60a";
+}
+.icon-concerto:before {
+	content: "\e60b";
+}
+.icon-comidinhas:before {
+	content: "\e60c";
+}
+.icon-cinema:before {
+	content: "\e60d";
+}
+.icon-bares:before {
+	content: "\e60e";
+}
+.icon-perto-mim:before {
+	content: "\e600";
+}
+.icon-lupa:before {
+	content: "\e610";
+}
+.icon-filtro:before {
+	content: "\e611";
+}
+.icon-voltar:before {
+	content: "\e612";
+}
+.icon-preco:before {
+	content: "\e613";
+}
+.icon-horario:before {
+	content: "\e614";
+}
+.icon-cartao:before {
+	content: "\e615";
+}
+.icon-mais-info:before {
+	content: "\e616";
+}
+.icon-telefone:before {
+	content: "\e617";
+}
+.icon-site:before {
+	content: "\e618";
+}
+.icon-bomba:before {
+	content: "\e619";
+}
+.icon-estrela:before {
+	content: "\e61a";
+}
+.icon-bola-estrela:before {
+	content: "\e61b";
+}
+.icon-hoteis:before {
+	content: "\e61c";
+}
+.icon-grid:before {
+	content: "\e61d";
+}
+.icon-slide:before {
+	content: "\e61e";
+}
+.icon-casinha:before {
+	content: "\e60f";
+}
+.icon-comer-beber:before {
+	content: "\e61f";
+}
+.icon-food-truck:before {
+	content: "\e621";
+}
+.icon-avaliar:before {
+	content: "\e622";
+}
+.icon-como-chegar:before {
+	content: "\e623";
+}
+.icon-onde-estacionar:before {
+	content: "\e624";
+}
+.icon-onde-quando:before {
+	content: "\e625";
+}
+.icon-programacao:before {
+	content: "\e626";
+}
+.icon-reservar-mesa:before {
+	content: "\e627";
+}
+.icon-salas-horarios:before {
+	content: "\e628";
+}
+.icon-login:before {
+	content: "\e629";
+}
+.icon-logout:before {
+	content: "\e62a";
+}
+.icon-assine:before {
+	content: "\e62b";
+}

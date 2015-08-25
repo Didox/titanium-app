@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name=viewport content="width=device-width,user-scalable=no">
+    <link rel="stylesheet" href="HTML/css/carousel.css">
+    <link rel="stylesheet" href="HTML/css/global.css">
+    <link rel="stylesheet" href="HTML/css/animacoes.css">
+    <link rel="stylesheet" href="HTML/css/busca.css">
+    <link rel="stylesheet" href="HTML/css/estabelecimento.css">
+    <link rel="stylesheet" href="HTML/css/restorando.css">
+    <link rel="stylesheet" href="HTML/css/comentarios.css">
+    <link rel="stylesheet" href="HTML/css/avaliar.css">
+    <link rel="stylesheet" href="HTML/css/category-icons.css">
+    <script src="HTML/js/api.js"></script>
+    <title>VejaSP Estabelecimento</title>
+  </head>
+  <body id="estabelecimento-view">
+    <header>
+      <a href="javascript:app.backToHome();" class="logo" onclick="app.eventAnalytics('Topo','clique','VEJA SAO PAULO',0);">Veja São Paulo</a>
+      <a href="javascript:app.backWindow()" class="back" onclick="app.eventAnalytics('Topo','clique','bt-voltar',0);">Voltar</a>
+      <form action="busca.html" class="bscForm">
+        <button type="reset" onclick="app.eventAnalytics('Topo','clique','cancelar-busca',0);">Cancelar</button>
+        <button type="submit">Buscar</button>
+        <input type="search" name="qu" class="qu" autocomplete="off" placeholder="Pesquisar">
+      </form>
+      <div class="bsc_history">
+        <p class="bsc_history_label">Buscas recentes <a href="#" class="bsc_history_close" onclick="app.eventAnalytics('Topo','clique','icone-x-historico',0);"></a></p>
+      </div>
+    </header>
+
+    <div class="modal">
+      <div id="programacao" class="modal-inner">
+        <div class="modal-title">
+          <span class="modal-close">×</span>
+          <div>PROGRAMAÇÃO</div>
+        </div>
+        <div class="modal-content">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal">
+      <div id="avaliar" class="modal-inner">
+        <div class="modal-title">
+          <span class="modal-close">×</span>
+          <div>AVALIAR</div>
+        </div>
+        <div class="modal-content">
+          <h2>Toque uma estrela para pontuar</h2>
+          <ul class="rating">
+            <li><a href="#" class="rating-selector" data-rating="0"><span class="icon-bomba"></span></a></li>
+            <li><a href="#" class="rating-selector" data-rating="1"><span class="icon-estrela"></span></a></li>
+            <li><a href="#" class="rating-selector" data-rating="2"><span class="icon-estrela"></span></a></li>
+            <li><a href="#" class="rating-selector" data-rating="3"><span class="icon-estrela"></span></a></li>
+            <li><a href="#" class="rating-selector" data-rating="4"><span class="icon-estrela"></span></a></li>
+            <li><a href="#" class="rating-selector" data-rating="5"><span class="icon-estrela"></span></a></li>
+          </ul>
+          <div class="comment"><textarea id="comment-input" placeholder="Escreva aqui seu comentário"></textarea></div>
+          <div class="buttons-holder">
+            <button id="enviarComentario" onclick="javascript:app.avaliar();">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="restorando" style="display:none;">
+      <div class="header">
+        <a href="javascript:RESTORANDO.close();" class="fechar">×</a>
+        <span class="logo restaurant-name"></span>
+      </div>
+      <div id="choice" class="step">
+        <h1>RESERVE SUA MESA</h1>
+        <div id="selectors">
+          <div id="dates-selector">
+            <p class="title"><a href="javascript:;" onclick="javascript:RESTORANDO.toogleCombo(event);">Data</a></p>
+            <ul id="dates-list" class="combo-list"></ul>
+          </div>
+          <div id="diners-selector">
+            <p class="title"><a href="javascript:;" onclick="javascript:RESTORANDO.toogleCombo(event);">Número de Pessoas</a></p>
+            <ul id="diners-list" class="combo-list"></ul>
+          </div>
+          <div id="times-selector">
+            <p class="title"><a href="javascript:;" onclick="javascript:RESTORANDO.toogleCombo(event);">Horário</a></p>
+            <ul id="times-list" class="combo-list"></ul>
+          </div>
+        </div>
+        <div class="buttons-holder">
+          <button id="selectors-button" onclick="RESTORANDO.goToStep(1)">Continuar</button>
+        </div>
+      </div>
+      <div id="personal" class="step">
+        <h1>RESERVE SUA MESA</h1>
+        <h2><span class="label-diners"></span>, <span class="label-date"></span> às <span class="label-time"></span></h2>
+        <form id="form-personal" onsubmit="javascript:RESTORANDO.book(event);">
+          <input id="input-first_name" type="text" placeholder="Nome"  />
+          <input id="input-last_name" type="text" placeholder="Sobrenome" />
+          <input id="input-email" type="email" placeholder="Email" />
+          <input id="input-phone" type="number" placeholder="Telefone" />
+          <textarea id="input-comments" type="text" placeholder="Deixe uma mensagem na recepção"></textarea>
+          <div class="buttons-holder">
+            <button type="button" class="secundary" onclick="javascript:RESTORANDO.goToStep(0)">Anterior</button>
+            <button type="submit" id="book-button">Reservar</button>
+          </div>
+        </form>
+      </div>
+      <div id="wating" class="step">
+        <h1>RESERVANDO SUA MESA</h1>
+        <h2>Aguarde um momento</h2>
+        <p class="carregando"></p>
+      </div>
+      <div id="confirmation" class="step">
+        <h1>RESERVA EFETUADA</h1>
+        <h2>Obrigado por realizar sua reserva em Restorando</h2>
+        <ul>
+          <li><span>Data:</span><strong id="book-date"></strong></li>
+          <li><span>Pessoas:</span><strong id="book-diners"></strong></li>
+          <li><span>Código:</span><strong id="book-reservation_number"></strong></li>
+          <li class="spacer"></li>
+          <li><span>Nome:</span><strong id="book-customer_name"></strong></li>
+          <li><span>Email:</span><strong id="book-customer_email"></strong></li>
+          <li><span>Celular:</span><strong id="book-customer_phone"></strong></li>
+          <li id="confirmation-comments"><span>Mensagem na recepção:</span><strong id="book-comments"></strong></li>
+        </ul>
+        <div class="buttons-holder">
+          <button id="selectors-button" onclick="javascript:RESTORANDO.close();">Ok</button>
+        </div>
+      </div>
+      <div id="error" class="step">
+        <h1>Erro ao reservar sua mesa</h1>
+        <h2>Ocorreu um erro ao reservar sua mesa em Restorando</h2>
+        <ul id="errors-list"></ul>
+        <div class="buttons-holder">
+          <button id="selectors-button" onclick="javascript:RESTORANDO.close();">Ok</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="estabelecimento">
+      <div class="options">
+        <ul>
+          <li id="como-chegar-botao"><a href="#" onclick="app.eventAnalytics('Estabelecimento','clique','bt-como-chegar-estab',0);"><span class="icon-como-chegar"></span><span class="text">Como chegar</span></a></li>
+          <li id="onde-estacionar-botao" style="display:none;"><a href="javascript:app.forwardLetsPark();" onclick="app.eventAnalytics('Estabelecimento','clique','bt-estaconar-estab',0);"><span class="icon-onde-estacionar"></span><span class="text">Onde Estacionar</span></a></li>
+          <li id="reservar-mesa-botao" style="display:none;"><a href="javascript:RESTORANDO.show();" onclick="app.eventAnalytics('Estabelecimento','clique','bt-reservar-estab',0);"><span class="icon-reservar-mesa"></span><span class="text">Reservar Mesa</span></a></li>
+          <li id="programacao-botao"><a href="#programacao" class="salas abrir-modal" onclick="app.eventAnalytics('Estabelecimento','clique','bt-programacao',0);"><span class="icon-programacao"></span><span class="text">Programação</span></a></li>
+          <li id="avaliar-botao"><a href="#avaliar" class="avaliar abrir-modal" onclick="app.eventAnalytics('Estabelecimento','clique','bt-avaliar-estab',0);"><span class="icon-avaliar"></span><span class="text">Avaliar</span></a></li>
+        </ul>
+      </div>
+      <div class="midia-estab">
+        <p class="carregando">Carregando</p>
+      </div>
+      <div class="wrapper">
+        <div class="detalhes"></div>
+      </div>
+      <div class="submenu">
+        <ul>
+          <li><a href="#" class="resenhas ativo" onclick="app.eventAnalytics('Estabelecimento','clique','aba-vejasp-diz-estab',0);">VEJASP diz<p class="seta-cima"></p></a></li>
+          <li><a href="#" class="avaliacoes" onclick="app.eventAnalytics('Estabelecimento','clique','aba-opiniao-estab',0);">Opiniões<p class="seta-cima"></p></a></li>
+          <li><a href="#" class="mais-infos" onclick="app.eventAnalytics('Estabelecimento','clique','aba-servico-estab',0);">Serviço<p class="seta-cima"></p></a></li>
+        </ul>
+      </div>
+      <div class="wrapper">
+        <div class="infos"></div>
+      </div>
+    </div>
+    <footer></footer>
+    <script src="HTML/js/zepto.js"></script>
+    <script src="HTML/js/carousel.js"></script>
+    <script src="HTML/js/index.js"></script>
+    <script src="HTML/js/comentarios.js"></script>
+    <script src="HTML/js/estabelecimento.js"></script>
+    <script src="HTML/js/restorando.js"></script>
+    <script src="HTML/js/eventos.js"></script>
+    <script src="HTML/js/avaliar.js"></script>
+    <script src="HTML/js/fastclick.js"></script>
+    <script>try {FlurryAgent.startSession('HQ85Q3FWJT72P476FRPK');} catch (e) { }</script>
+    <script>
+      app.loadEstabelecimento();
+    	$('.submenu ul li a').click(function(){
+    		$('.submenu ul li a').removeClass("ativo");
+    		$('.infos .resenhas, .infos .avaliacoes, .infos .mais-infos').hide();
+    		$('.infos .'+$(this).attr("class")).show();
+    		$(this).addClass("ativo");
+    	});
+      app.renderPublicidade("leaderboard1","estabelecimento");
+    </script>
+  </body>
+</html>

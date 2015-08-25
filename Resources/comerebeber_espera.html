@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <link rel="stylesheet" href="HTML/css/global.css">
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,700" rel=stylesheet type="text/css">
+    <link rel="stylesheet" href="HTML/css/category-icons.css">
+    <title>APP VejaSP - Comer e Beber</title>
+  </head>
+  <body class="espera">
+    <header>
+      <div id="header">
+        <span class="logo">COMER & BEBER</span>
+        <a href="javascript:app.backToHome()" class="back" onclick="app.eventAnalytics('Topo','clique','bt-voltar',0);">Voltar</a>
+      </div>
+    </header>
+    <div class="barra"></div>
+    <div class="mensagem">
+      <img src="HTML/images/cb_espera.png">
+      <h1>Comer & Beber 2014</h1>
+      <p>Esta seção ainda não está disponível no aplicativo.</p>
+      <p>Por favor, acessar a partir do dia<br />20/10/2014.</p>
+      <p>Obrigado!</p>
+    </div>
+    <script src="HTML/js/zepto.js"></script>
+    <script src="HTML/js/mustache.js"></script>
+    <script src="HTML/js/index.js"></script>
+    <script>
+      $('img').css('background', "url('')");
+      app.renderPublicidade("leaderboard1","estabelecimento");
+    </script>
+  </body>
+</html>

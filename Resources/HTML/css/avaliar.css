@@ -1,0 +1,20 @@
+#avaliar h2 {margin: 10px 0 0; color: #8f8f8f; text-transform: uppercase; font-size: 10px;}
+#avaliar ul.rating {overflow: hidden; width: 216px; margin: 0 auto; text-align: center;}
+#avaliar ul.rating>li {display: inline-block; border-left:2px solid white; border-right:2px solid white;}
+#avaliar ul.rating>li>a>span {color: #eee; font-size: 35px;}
+#avaliar ul.rating>li>a.active>span.icon-estrela {color: #f9df00;}
+#avaliar ul.rating>li>a.active>span.icon-bomba {color: #000;}
+#avaliar div.comment {padding: 10px; box-sizing: border-box;}
+#avaliar div.comment>textarea {font-size: 15px; height: 270px; width: 100%; padding: 15px; border: none; background-color: #f6f6f6; border-radius: 5px; box-sizing: border-box;}
+
+#avaliar .buttons-holder {margin: 15px auto 0; text-align: center;}
+#avaliar .buttons-holder>label {position: relative; left: 15px; top: 10px; display: inline-block; width: 55px; text-transform: uppercase; font-size: 10px; }
+#avaliar .buttons-holder>input[type=checkbox] {position: relative; left: 27px; top: 5px; -webkit-transform: scale(2);}
+#avaliar .buttons-holder>button{position: relative; display: inline-block;padding: 10px;width: 130px;font: bold 14px/20px 'Ubuntu';color: #fff;text-align: center;text-transform: uppercase;background: #0099cc;border-radius: 4px;border: 1px solid #0099cc;}
+
+.infos ul.rating {overflow: hidden; width: 100%; margin: 0 auto; margin-top: 10px; border-bottom: 3px solid #eee; padding-bottom: 20px; text-align: center;}
+.infos ul.rating>li {margin-right: 10px; display: inline-block;}
+.infos ul.rating>li.label {color: #666; text-transform: uppercase; vertical-align: super;}
+.infos ul.rating>li>a>span {color: #eee; font-size: 35px;}
+.infos ul.rating>li>a.active>span.icon-estrela {color: #f9df00;}
+.infos ul.rating>li>a.active>span.icon-bomba {color: #000;}

@@ -1,0 +1,117 @@
+.switch-option{
+	-webkit-transition:0.15s linear;
+	        transition:0.15s linear
+}
+.switch-cursor{
+  -webkit-transition: left 0.3s, width 0.2s 0.1s;
+          transition: left 0.3s, width 0.2s 0.1s;
+}
+
+#swift-menu ul li a{
+  transform:scale(0.7);
+  -webkit-transform:scale(0.7);
+  transition:0.2s linear;
+  -webkit-transition:0.2s linear
+}
+#swift-menu ul li.m-active a{
+  transform:scale(1);
+  -webkit-transform:scale(1)
+}
+#swift-menu .swift-description{
+  -webkit-transition: opacity 0.3s 0;
+  transition: opacity 0.3s 0;
+}
+#swift-menu .active .swift-description{
+  -webkit-transition:opacity 0.3s 0.3s;
+  transition:opacity 0.3s 0.3s;
+}
+#swift-menu.swift-grid .swift-description{
+  -webkit-transition: opacity 0.3s 0.45s;
+  transition: opacity 0.3s 0.45s;
+}
+#swift-menu .icon-home{
+  -webkit-transition:0.2s linear;
+  transition:0.2s linear;
+}
+
+.swift li{
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+.swift .active{
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+
+.swift li{
+  -webkit-transition: all 0.3s linear, left 0.3s ease-out, top 0.3s ease-out;
+          transition: all 0.3s linear, left 0.3s ease-out, top 0.3s ease-out;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+.swift-bullet{
+  -webkit-transition: 0.3s linear;
+          transition: 0.3s linear;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
+
+ul.m-carousel-inner li{
+  transition: transform 0.2s ease-in-out;
+  -moz-transition: -moz-transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+}
+#swift-menu{visibility: hidden;margin-left: -50% }
+#swift-menu.out-menu{
+	display: block;
+	visibility: visible;
+  -webkit-animation: rotateCarouselLeftOut .8s both ease;
+  animation: rotateCarouselLeftOut .8s both ease;
+}
+#grid-menu { visibility: hidden;}
+#grid-menu.out-menu{
+	display: block;
+	visibility: visible;
+  -webkit-animation: rotateCarouselRightOut .8s both ease;
+  animation: rotateCarouselRightOut .8s both ease;
+}
+#grid-menu.active-menu{
+  -webkit-animation: rotateCarouselLeftIn .8s both ease;
+  animation: rotateCarouselLeftIn .8s both ease;
+}
+#swift-menu.active-menu{
+  -webkit-animation: rotateCarouselRightIn .8s both ease;
+  animation: rotateCarouselRightIn .8s both ease;
+}
+
+@-webkit-keyframes rotateCarouselRightIn {
+  from { opacity: .3; -webkit-transform: translateX(-200%) scale(.4) rotateY(-65deg); }
+}
+@keyframes rotateCarouselRightIn {
+  from { opacity: .3; transform: translateX(-200%) scale(.4) rotateY(-65deg); }
+}
+@-webkit-keyframes rotateCarouselRightOut {
+  to { opacity: .3; -webkit-transform: translateX(200%) scale(.4) rotateY(65deg);height:0; }
+}
+@keyframes rotateCarouselRightOut {
+  to { opacity: .3; transform: translateX(200%) scale(.4) rotateY(65deg);height:0; }
+}
+
+@-webkit-keyframes rotateCarouselLeftOut {
+  to { opacity: .3; -webkit-transform: translateX(-150%) scale(.4) rotateY(-65deg); }
+}
+@keyframes rotateCarouselLeftOut {
+  to { opacity: .3; transform: translateX(-150%) scale(.4) rotateY(-65deg); }
+}
+@-webkit-keyframes rotateCarouselLeftIn {
+  from { opacity: .3; -webkit-transform: translateX(200%) scale(.4) rotateY(65deg);height:auto; }
+}
+@keyframes rotateCarouselLeftIn {
+  from { opacity: .3; transform: translateX(200%) scale(.4) rotateY(65deg);height:auto; }
+}

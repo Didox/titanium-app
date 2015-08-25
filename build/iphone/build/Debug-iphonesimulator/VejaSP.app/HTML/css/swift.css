@@ -1,0 +1,97 @@
+.swift{
+  position: relative;
+  overflow: hidden;
+}
+.swift-inner{
+  position: relative;
+  display: block;
+  left: 50%;
+  -webkit-transition: 0.3s linear;
+          transition: 0.3s linear; 
+}
+.swift ul{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  list-style: none;
+  letter-spacing: 0;
+  -webkit-transition: left 0.3s ease-out, width 0.3s linear;
+          transition: left 0.3s ease-out, width 0.3s linear;
+}
+.swift li{
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.swift-mutable ul{
+	overflow: visible;
+}
+.swift-mutable li{
+	position: absolute;
+	top: 0;
+}
+.swift li a{
+  width: 100%;
+  display: block;
+}
+.swift li a img{
+  width: 100%;
+}
+.swift-bullets-container, .swift-buttons-container{
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.swift-bullet{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 10px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity:0.4;
+}
+.swift-bullet.active{
+  opacity:1;
+}
+
+
+.swift-aux {
+	position: absolute!important;
+	left: -9999px!important;
+  -webkit-transition: none!important;
+          transition: none!important;
+  -webkit-transform: scale(1)!important;
+          transform: scale(1)!important;
+}
+.swift-aux *{
+	-webkit-transition: none!important;
+          transition: none!important;
+}
+.swift-grid .swift-inner, .swift-grid .swift-inner ul{
+	width: 100%!important;
+	margin-left: 0!important;
+	left: 0!important;
+}
+.swift-grid li{
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.swift-grid .swift-bullets-container, .swift-grid .swift-buttons-container{
+	display: none;
+}
+
+
+
+#swift-gallery{
+  position:relative;
+}
+#swift-gallery .swift-bullets-container{
+  position:absolute;
+  bottom:10px;
+  width:320px;
+}

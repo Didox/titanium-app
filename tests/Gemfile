@@ -1,0 +1,17 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.2.13'
+
+gem 'sqlite3'
+gem 'json'
+
+gem 'database_cleaner'
+gem 'rails3-generators' 
+gem 'rspec-rails'
+gem 'factory_girl_rails'
+
+gem "cucumber-rails"
+gem "selenium-webdriver"
+gem "curb"
+gem "capybara"
+gem 'debugger'

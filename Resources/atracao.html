@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <link rel="stylesheet" href="HTML/css/global.css">
+    <link rel="stylesheet" href="HTML/css/animacoes.css">
+    <link rel="stylesheet" href="HTML/css/comentarios.css">
+    <link rel="stylesheet" href="HTML/css/carousel.css">
+    <link rel="stylesheet" href="HTML/css/avaliar.css">
+    <link rel="stylesheet" href="HTML/css/category-icons.css">
+    <link rel="stylesheet" href="HTML/css/atracao.css">
+    <script src="HTML/js/api.js"></script>
+    <title>VejaSP Atrações</title>
+  </head>
+  <body>
+    <header>
+      <a href="javascript:app.backToHome();" class="logo" onclick="app.eventAnalytics('Topo','clique','VEJA SAO PAULO',0);">Veja São Paulo</a>
+      <a href="javascript:app.backWindow()" class="back" onclick="app.eventAnalytics('Topo','clique','bt-voltar',0);">Voltar</a>
+      <form action="busca.html" class="bscForm">
+        <button type="reset" onclick="app.eventAnalytics('Topo','clique','cancelar-busca',0);">Cancelar</button>
+        <button type="submit">Buscar</button>
+        <input type="search" name="qu" class="qu" autocomplete="off" placeholder="Pesquisar">
+      </form>
+      <div class="bsc_history">
+        <p class="bsc_history_label">Buscas recentes <a href="#" class="bsc_history_close" onclick="app.eventAnalytics('Topo','clique','icone-x-historico',0);"></a></p>
+      </div>
+    </header>
+    <div class="modal">
+      <div id="salas-de-cinema" class="modal-inner">
+        <div class="modal-title">
+          <span class="modal-close">×</span>
+          <div class='onde-quando'>ONDE E QUANDO</div>
+        </div>
+        <div class="modal-content">
+          <h3 class="separator">Até 2 de janeiro</h3>
+        </div>
+      </div>
+    </div>
+    <div class="modal">
+      <div id="avaliar" class="modal-inner">
+        <div class="modal-title">
+          <span class="modal-close">×</span>
+          <div>AVALIAR</div>
+        </div>
+        <div class="modal-content">
+          <h2>Toque uma estrela para pontuar</h2>
+          <ul class="rating">
+            <li><a href="#" class="rating-selector" data-rating="0"><span class="icon-bomba"></span></a></li>
+            <li><a href="#" class="rating-selector" data-rating="1"><span class="icon-estrela"></span></a></li>
+            <li><a href="#" class="rating-selector" data-rating="2"><span class="icon-estrela"></span></a></li>
+            <li><a href="#" class="rating-selector" data-rating="3"><span class="icon-estrela"></span></a></li>
+            <li><a href="#" class="rating-selector" data-rating="4"><span class="icon-estrela"></span></a></li>
+            <li><a href="#" class="rating-selector" data-rating="5"><span class="icon-estrela"></span></a></li>
+          </ul>
+          <div class="comment"><textarea id="comment-input" placeholder="Escreva aqui seu comentário"></textarea></div>
+          <div class="buttons-holder">
+            <button onclick="javascript:app.avaliar();">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="atracao">
+      <div class="options">
+        <ul>
+          <li><a href="#salas-de-cinema" class="salas abrir-modal" onclick="app.eventAnalytics('Atração','clique','bt-salas-horarios',0);"><span class="icon-onde-quando"></span><span class="text">Onde e Quando</span></a></li>
+          <li id="avaliar-botao"><a href="#avaliar" class="abrir-modal" onclick="app.eventAnalytics('Atração','clique','bt-avaliar-atracao',0);"><span class="icon-avaliar"></span><span class="text">Avaliar</span></a></li>
+        </ul>
+      </div>
+      <div class="midia-atracao">
+        <p class="carregando">Carregando</p>
+      </div>
+      <div class="wrapper">
+        <div class="detalhes"></div>
+      </div>
+      <div class="submenu">
+        <ul>
+          <li><a href="#" class="resenhas ativo" onclick="app.eventAnalytics('Atração','clique','aba-vejasp-diz-atracao',0);">VEJASP diz<p class="seta-cima"></p></a></li>
+          <li><a href="#" class="avaliacoes" onclick="app.eventAnalytics('Atração','clique','aba-opiniao-atracao',0);">Opiniões<p class="seta-cima"></p></a></li>
+        </ul>
+      </div>
+      <div class="wrapper">
+        <div class="infos"></div>
+      </div>
+    </div>
+    <footer></footer>
+    <script src="HTML/js/zepto.js"></script>
+    <script src="HTML/js/carousel.js"></script>
+    <script src="HTML/js/index.js"></script>
+    <script src="HTML/js/comentarios.js"></script>
+    <script src="HTML/js/atracao.js"></script>
+    <script src="HTML/js/eventos.js"></script>
+    <script src="HTML/js/avaliar.js"></script>
+    <script src="HTML/js/fastclick.js"></script>
+    <script>app.loadAtracao();app.renderPublicidade("leaderboard1","atracao");</script>
+    <script>try {FlurryAgent.startSession('HQ85Q3FWJT72P476FRPK');} catch (e) { }</script>
+  </body>
+</html>
